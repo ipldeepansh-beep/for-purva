@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>❤️</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<style>
+*{margin:0;padding:0;box-sizing:border-box;font-family:'Segoe UI',sans-serif}
+body{background:black;height:100vh;overflow:hidden;color:white}
+
+/* LOCK */
+#lock{
+    position:fixed;inset:0;background:black;
+    display:flex;align-items:center;justify-content:center;
+    flex-direction:column;z-index:9999
+}
+#lock input{padding:12px 20px;font-size:1.1rem;border-radius:6px;border:none}
+#lock button{margin-top:15px;padding:10px 25px;border:none;border-radius:6px;background:pink}
+
+/* SLIDES */
+.slide{position:absolute;width:100%;height:100%;opacity:0;transition:opacity 1.6s}
+.slide.active{opacity:1}
+.bg{
+    position:absolute;width:100%;height:100%;
+    background-size:cover;background-position:center;
+    filter:brightness(0.45)
+}
+.content{
+    position:absolute;
+    top:50%;
+    left:50%;
+    transform:translate(-50%,-50%);
+    text-align:center;
+    max-width:90%;
+    max-height:70vh;
+    overflow-y:auto;
+    padding:10px;
+}
+.content h1{white-space:pre-line}
+
+h1{font-size:2.4rem;text-shadow:0 0 22px rgba(255,255,255,.5)}
+.type::after{content:'|';animation:blink 1s infinite}
+@keyframes blink{50%{opacity:0}}
+
+/* HEARTS */
+.heart{
+    position:absolute;color:pink;font-size:1.2rem;
+    animation:floatUp 6s linear forwards;pointer-events:none
+}
+@keyframes floatUp{
+    from{transform:translateY(100vh);opacity:1}
+    to{transform:translateY(-10vh);opacity:0}
+}
+
+/* FADE */
+#fade{
+    position:fixed;inset:0;background:black;
+    opacity:0;transition:opacity 3s;z-index:999
+}
+
+/* EXIT */
+#exit{
+    position:fixed;inset:0;background:black;
+    display:none;align-items:center;justify-content:center;
+    flex-direction:column;text-align:center;z-index:1000
+}
+button{padding:10px 25px;border:none;border-radius:6px;margin:10px}
+#secret{display:none;color:pink;margin-top:20px}
+
+/* IDLE */
+#idle{
+    position:fixed;bottom:60px;width:100%;
+    text-align:center;opacity:0;transition:opacity 2s;
+    font-size:1rem
+}
+</style>
+</head>
+
+<body>
+
+<!-- LOCK -->
+<div id="lock">
+    <h2>Enter Password ❤️</h2>
+    <input type="password" id="pass">
+    <button id="unlockBtn">Unlock</button>
+</div>
+
+<!-- MUSIC -->
+<audio id="music" loop>
+    <source src="khwab.mp3" type="audio/mpeg">
+</audio>
+
+<!-- SLIDES -->
+<div class="slide active"><div class="bg" style="background-image:url('starting.jpg')"></div><div class="content"><h1 class="type" data-text="Hey Meri Purva"></h1></div></div>
+
+<div class="slide"><div class="bg" style="background-image:url('1000197129.jpg')"></div><div class="content"><h1 class="type" data-text="I didn’t know how to start this..."></h1></div></div>
+
+<div class="slide"><div class="bg" style="background-image:url('gifts.jpg')"></div><div class="content"><h1 class="type" data-text="Because some things don’t begin with words."></h1></div></div>
+
+<div class="slide"><div class="bg" style="background-image:url('1.jpg')"></div><div class="content"><h1 class="type" data-text="Before you, my life was moving.\nBut it wasn’t settling.\nYou didn’t fix me.\nYou understood me."></h1></div></div>
+
+<div class="slide"><div class="bg" style="background-image:url('2.jpg')"></div><div class="content"><h1 class="type" data-text="I don’t always know how to love perfectly.\nBut I know who I want to learn with."></h1></div></div>
+
+<div class="slide"><div class="bg" style="background-image:url('together_ai.jpg')"></div><div class="content"><h1 class="type" data-text="I choose you.\nNot because it’s easy.\nBut because it’s real."></h1></div></div>
+
+<div class="slide"><div class="bg" style="background-image:url('3.jpg')"></div><div class="content"><h1 class="type" data-text="If this scared you a little…\nIt scared me too."></h1></div></div>
+
+<div class="slide"><div class="bg" style="background-image:url('hands_nad.jpeg')"></div><div class="content"><h1 class="type" data-text="But i am still here\nI choose you\nI choose you MERI PURVA"></h1></div></div>
+
+<div class="slide"><div class="bg" style="background-image:url('4.jpg')"></div><div class="content"><h1 class="type" data-text="Even on days love isn’t easy"></h1></div></div>
+
+<div class="slide"><div class="bg" style="background-image:url('heart.jpg')"></div><div class="content"><h1 class="type" data-text="I love you, MERI PURVA"></h1></div></div>
+
+<div class="slide"><div class="bg" style="background-image:url('heart_bekar.jpg')"></div><div class="content"><h1 class="type" data-text="So lets start from the starting"></h1></div></div>
+
+<div class="slide"><div class="bg" style="background-image:url('5.jpg')"></div><div class="content"><h1 class="type" data-text="So, we met through a common friend.\nAt that time, you were in a relationship with that guy.\nLater, you found out that he wasn’t serious about you, and he confessed it himself.\nAfter that, you both had a breakup.\nWhen I got to know about all this, I was honestly scared to talk to you.\nI didn’t want to disturb you or hurt you in any way.\nBut after a week or two, I messaged you.\nWe talked very maturely and calmly, and everything felt natural.\nWhen I understood the situation properly, I decided to step back from my friendship with Naman.\nI just wanted you to know that I’m here for you, and you can always text me."></h1></div></div>
+
+<div class="slide"><div class="bg" style="background-image:url('birthday.jpg')"></div><div class="content"><h1 class="type" data-text="Then we started talking a bit and here comes my birthday and the script and your 'aaj aapka birthday hai kya'.\nI did the most unexpected thing yaa yaa I know that 'hmmmmmmmmm' was different.\nBechara mera tinda happy birthday bolna bhi bhool gya.\nI lobeeee you"></h1></div></div>
+
+<div class="slide"><div class="bg" style="background-image:url('college.jpg')"></div><div class="content"><h1 class="type" data-text="Phir, you got to your college and I got to Delhi.\nI texted you saying 'Please text me if you need my help'.\nI also said something about your roommates and everything got true and we started talking more."></h1></div></div>
+
+<div class="slide"><div class="bg" style="background-image:url('6.jpg')"></div><div class="content"><h1 class="type" data-text="Then I felt ill and uske baad we started talking more and more.\nIt's also the date we consider our relationship started.\nI know we both were very confused about each other’s feelings.\nBut the main thing was we never gave up on each other and stayed together."></h1></div></div>
+
+<div class="slide"><div class="bg" style="background-image:url('7.webp')"></div><div class="content"><h1 class="type" data-text="We created a lot of memories together and I am sure that we will create them throughout our life."></h1></div></div>
+
+<div class="slide"><div class="bg" style="background-image:url('8.jpg')"></div><div class="content"><h1 class="type" data-text="Chlo let's discuss some of our memories we created together"></h1></div></div>
+
+<div class="slide"><div class="bg" style="background-image:url('9.jpg')"></div><div class="content"><h1 class="type" data-text="The first memory of us where you used to hate me.\nNot just hate, like a lot.\nI wasn’t aware of that at that time.\nBut slowly you started trusting me and that progress made me very happy.\nI Love You A Lot My Purva"></h1></div></div>
+
+<div class="slide"><div class="bg" style="background-image:url('her_parents.jpg')"></div><div class="content"><h1 class="type" data-text="Memory of us soft launching each other with our parents.\nDeepansh ne student discount se earphones dilaye.\nAur mummy ko follow request aayi jo accept nahi hui."></h1></div></div>
+
+<div class="slide"><div class="bg" style="background-image:url('10.jpg')"></div><div class="content"><h1 class="type" data-text="Talking about memories and how can we forget about some dirty stuff.\nPura to mai......\nEhehehehehe"></h1></div></div>
+
+<div class="slide"><div class="bg" style="background-image:url('11.jpg')"></div><div class="content"><h1 class="type" data-text="How can we not talk about our calls.\nThe ones I started.\nAnd when you said raat ko call pe bataungi.\nI was teasing you and I was the happiest.\nI still am."></h1></div></div>
+
+<div class="slide"><div class="bg" style="background-image:url('her_mom.jpg')"></div><div class="content"><h1 class="type" data-text="The Spotify memory.\nAnd your bank account error.\nWe spent hours figuring it out.\nAnd later your student ID verification too."></h1></div></div>
+
+<div class="slide"><div class="bg" style="background-image:url('father_sbi.jpeg')"></div><div class="content"><h1 class="type" data-text="Talking about bank account and SBI.\nImpossible.\nI hate SBI but my father-in-law is in SBI so I tease you only with love."></h1></div></div>
+
+<div class="slide"><div class="bg" style="background-image:url('12.jpg')"></div><div class="content"><h1 class="type" data-text="The Diwali time.\nWe were both at home and scared.\nBut inside my heart I knew we would manage.\nAnd we did.\nWe are one."></h1></div></div>
+
+<div class="slide"><div class="bg" style="background-image:url('13.jpg')"></div><div class="content"><h1 class="type" data-text="The most important day of our life.\nI was taking a bath and suddenly thought I want to meet the girl I will marry."></h1></div></div>
+
+<div class="slide"><div class="bg" style="background-image:url('mumbai.jpg')"></div><div class="content"><h1 class="type" data-text="I know it was shocking for you.\nBut Deepansh sambhal lega.\nWe met.\nHeld hands.\nJust us.
+"></h1></div></div>
+
+<div class="slide"><div class="bg" style="background-image:url('old_heart.webp')"></div><div class="content"><h1 class="type" data-text="The time we spent together is unforgettable.\nEven the day we almost got caught.\nThe happiest and saddest day.\nBut separation was temporary.\nWe are forever.
+"></h1></div></div>
+
+<div class="slide"><div class="bg" style="background-image:url('15.jpeg')"></div><div class="content"><h1 class="type" data-text="Our New Year.\nNot as planned.\nBut together.\nAnd that’s what matters."></h1></div></div>
+
+<div class="slide"><div class="bg" style="background-image:url('16.jpg')"></div><div class="content"><h1 class="type" data-text="Our unforgettable fights.\nPrivacy, trust, understanding.\nI don’t worry anymore.\nWe are together."></h1></div></div>
+
+<div class="slide"><div class="bg" style="background-image:url('purva_short.jpg')"></div><div class="content"><h1 class="type" data-text="So many memories.\nBut the hardest part was hiding.\nI trust you my Tinda."></h1></div></div>
+
+<div class="slide"><div class="bg" style="background-image:url('together.jpg')"></div><div class="content"><h1 class="type" data-text="Mera pyara baccha\nI LOVE YOU A LOT"></h1></div></div>
+
+<div class="slide"><div class="bg" style="background-image:url('17.jpg')"></div><div class="content"><h1 class="type" data-text="I got lost in your eyes.\nSo lost that my brain went on airplane mode.\nTolly."></h1></div></div>
+
+<div class="slide"><div class="bg" style="background-image:url('18.jpg')"></div><div class="content"><h1 class="type" data-text="The forehead kiss.\nThe side hug.\nThe card girana.\nYou are my tinda.\nMY TINDA."></h1></div></div>
+
+<div class="slide"><div class="bg" style="background-image:url('19.jpg')"></div><div class="content"><h1 class="type" data-text="Purva Ji.\nBe honest with your feelings.\nYou’ll see a changed Deepansh.\nI’m falling for you more every day."></h1></div></div>
+
+<div class="slide"><div class="bg" style="background-image:url('20.jpg')"></div><div class="content"><h1 class="type" data-text="We fight and we fix.\nStay with me.\nI’ll marry you."></h1></div></div>
+
+<div class="slide"><div class="bg" style="background-image:url('21.jpg')"></div><div class="content"><h1 class="type" data-text="Bhaut lambi ho gyi na.\nChlo let’s wrap it in the next slide."></h1></div></div>
+
+<div class="slide"><div class="bg" style="background-image:url('hands.jpg')"></div><div class="content"><h1 class="type" data-text="Hey Purva,\nI was just sitting here thinking about everything, and I realized if I could only say one last thing to you, I’d want it to be this. I know I’m not always the best with words, but you’re the most important part of my life, and I need you to know how much you actually mean to me.\n\nEver since you came into my life, everything just feels different. You’re my peace, Purva. Even when things get stressful with college or exams or just life in general, knowing I have you makes it all feel okay. I love the way you understand me without me even having to say much. I love your vibe, your heart, and just... everything about you.\n\nI know I can be a bit much sometimes, but thank you for staying, for being my person, and for loving me the way you do. I honestly don't know what I'd do without you by my side. You’re my world, and I promise to always be there for you, no matter what happens.\n\nI love you more than I can ever really put into a text. You’re mine, and I’m yours, always."></h1></div></div>
+
+
+
+<!-- (ALL YOUR REMAINING SLIDES — CONTENT UNCHANGED, ONLY FIXED) -->
+
+<!-- IDLE -->
+<div id="idle">I’m still here.</div>
+<div id="fade"></div>
+
+<!-- EXIT -->
+<div id="exit">
+    <h1>That's all i wanted to say</h1>
+    <p id="timed" style="opacity:0">Stay here for a moment…</p>
+    <button onclick="location.reload()">Replay</button>
+    <button onclick="window.close()">Close</button>
+    <button onclick="unlockSecret()">Secret ❤️</button>
+    <p id="secret">I'LL BE WITH YOU FOREVER AND WE ARE GETTING MARIED ON DECEMBER 2031</p>
+</div>
+
+<script>
+const PASSWORD="31072025";
+const SECRET_PASSWORD="MERIPURVA";
+const HER_NAME="Purva Deepansh Singh";
+
+const slides=document.querySelectorAll('.slide');
+const lock=document.getElementById('lock');
+const pass=document.getElementById('pass');
+const music=document.getElementById('music');
+const fade=document.getElementById('fade');
+const exit=document.getElementById('exit');
+const timed=document.getElementById('timed');
+const secret=document.getElementById('secret');
+const idle=document.getElementById('idle');
+
+let index=0, unlocked=false, idleTimer, justUnlocked=false;
+
+/* UNLOCK */
+document.getElementById('unlockBtn').onclick = (e) => {
+    e.stopPropagation();
+    if (pass.value === PASSWORD) {
+        lock.style.display = "none";
+        unlocked = true;
+        justUnlocked = true;
+        index = 0;
+
+        music.play();
+
+        // small delay so fade-in finishes
+        setTimeout(() => {
+            typeText(slides[0]);
+        }, 300);
+    }
+};
+
+/* CLICK */
+document.body.onclick = () => {
+    if (justUnlocked) {
+        justUnlocked = false;
+        return;
+    }
+
+    resetIdle();
+    if (!unlocked || exit.style.display === "flex") return;
+
+    if (index < slides.length - 1) {
+        slides[index].classList.remove('active');
+        index++;
+        slides[index].classList.add('active');
+
+        typeText(slides[index]);
+
+        if (index === slides.length - 1) {
+            navigator.vibrate?.([200,100,200]);
+            fadeOutMusic();
+            setTimeout(showExit, 3000);
+        }
+    }
+};
+
+/* TYPE */
+function typeText(slide){
+    resetIdle();
+    const el=slide.querySelector('.type');
+    if(!el)return;
+    let text=el.dataset.text.replace(/\\n/g,"\n");
+    el.textContent="";
+    let i=0;
+    const w=setInterval(()=>{
+        el.textContent+=text[i++];
+        if(i>=text.length)clearInterval(w);
+    },70);
+}
+
+/* HEARTS */
+setInterval(()=>{
+    if(!unlocked)return;
+    let h=document.createElement('div');
+    h.className='heart';h.innerText='❤️';
+    h.style.left=Math.random()*100+'vw';
+    document.body.appendChild(h);
+    setTimeout(()=>h.remove(),6000);
+},500);
+
+/* EXIT */
+function showExit(){
+    fade.style.opacity="1";
+    setTimeout(()=>{
+        exit.style.display="flex";
+        setTimeout(()=>timed.style.opacity="1",5000);
+        localStorage.removeItem("slideIndex");
+    },3000);
+}
+
+/* MUSIC FADE */
+function fadeOutMusic(){
+    let v=music.volume;
+    let f=setInterval(()=>{
+        v-=0.04;
+        if(v<=0){music.pause();clearInterval(f);}
+        else music.volume=v;
+    },200);
+}
+
+/* SECRET */
+function unlockSecret(){
+    let p=prompt("Enter secret password");
+    if(p===SECRET_PASSWORD) secret.style.display="block";
+}
+
+/* IDLE */
+function resetIdle(){
+    idle.style.opacity="0";
+    clearTimeout(idleTimer);
+    idleTimer=setTimeout(()=>idle.style.opacity="1",20000);
+}
+</script>
+
+</body>
+</html>
